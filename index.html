@@ -80,7 +80,7 @@
         >
           <svg
             id="theme-icon-sun"
-            xmlns="https://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -89,7 +89,8 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="h-4 w-4 hidden"
+            class="h-4 w-4"
+            style="display: none;"
           >
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2" />
@@ -103,7 +104,7 @@
           </svg>
           <svg
             id="theme-icon-moon"
-            xmlns="https://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -112,7 +113,8 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="h-4 w-4 hidden"
+            class="h-4 w-4"
+            style="display: none;"
           >
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
           </svg>
@@ -147,12 +149,12 @@
         const currentIsDark =
           document.documentElement.classList.contains("dark");
         if (currentIsDark) {
-          iconSun.classList.remove("hidden");
-          iconMoon.classList.add("hidden");
+          iconSun.style.display = "block";
+          iconMoon.style.display = "none";
           themeToggle.setAttribute("aria-label", "Switch to light theme");
         } else {
-          iconMoon.classList.remove("hidden");
-          iconSun.classList.add("hidden");
+          iconMoon.style.display = "block";
+          iconSun.style.display = "none";
           themeToggle.setAttribute("aria-label", "Switch to dark theme");
         }
       }
